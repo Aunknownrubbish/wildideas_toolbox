@@ -2,17 +2,35 @@ import streamlit as st
 
 st.set_page_config(page_title="胡思乱想工具箱", layout="wide", page_icon="💡")
 
+# --- 隐藏侧边栏顶部默认导航文字的 CSS ---
+st.markdown("""
+    <style>
+        /* 隐藏侧边栏顶部的默认导航链接名称 (比如那个 'app') */
+        [data-testid="stSidebarNav"] ul {
+            padding-top: 2rem;
+        }
+        [data-testid="stSidebarNav"]::before {
+            content: "🛠️ 实验室导航";
+            margin-left: 20px;
+            margin-top: 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #ff4b4b;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
 st.title("💡 胡思乱想工具箱")
 st.markdown("---")
 
 st.markdown("""
-### 欢迎来到一名 00 后研究生的理智实验室
-这里存放着我关于生活的种种量化思考。我们不替你做决策，只帮你剥开迷雾。
+### 欢迎来到一名 00 后研究生的胡思乱想
+这里存放着我关于生活的种种稀奇古怪的想法。我们不替你做决策，只帮你剥开迷雾。
 
 **👈 请在左侧侧边栏选择你想要使用的工具：**
 
 1. **🏠 住房主权量化器**：帮你精算“归属感”的真实价格。
-2. **🎓 赛博占卜**     ：测测今天的运势吧~
+2. **🎓 赛博占卜** ：测测今天的运势吧~
 3. **💼 职场自由度精算**：(计划中) 算算你的真实时薪。
 
 ---
